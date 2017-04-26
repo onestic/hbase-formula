@@ -105,10 +105,12 @@ create-hbase-storage:
       hadoop_home: {{ hadoop.alt_home }}
 {% endif %}
 
+{% if hbase.is_master or hbase.is_regionserver%}
 hbase-services:
   service.running:
     - enable: True
     - names:
+{% endif %}
 {% if hbase.is_master %}
       - hbase-master
       - hbase-stargate

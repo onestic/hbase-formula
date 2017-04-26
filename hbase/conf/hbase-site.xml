@@ -1,7 +1,5 @@
 {%- from 'hadoop/settings.sls' import hadoop with context %}
 {%- from 'hbase/settings.sls' import hbase with context %}
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
     <property>
         <name>hbase.rootdir</name>
@@ -14,5 +12,9 @@
     <property>
         <name>hbase.zookeeper.quorum</name>
         <value>{{ zookeeper_quorum }}</value>
+    </property>
+    <property>
+        <name>zookeeper.znode.parent</name>
+        <value>/hbase</value>
     </property>
 </configuration>

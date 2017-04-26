@@ -14,8 +14,8 @@
 {%- set is_master = salt['match.' ~ targeting_method](master_target) %}
 {%- set is_regionserver = salt['match.' ~ targeting_method](regionserver_target) %}
 
-{%- set source_url = 'http://apache.osuosl.org/hbase/1.0.1.1/hbase-1.0.1.1-bin.tar.gz' %}
-{%- set real_home = '/usr/lib/hbase-1.0.1.1' %}
+{%- set source_url = 'http://apache.osuosl.org/hbase/1.2.4/hbase-1.2.4-bin.tar.gz' %}
+{%- set real_home = '/usr/lib/hbase-1.2.4' %}
 {%- set rootdir = 'hdfs://' ~ namenode_host ~ ':' ~ namenode_port ~ '/hbase' %}
 {%- set initscript = 'hbase.init' %}
 {%- set rs_initscript = 'hbase-regionserver.init' %}
